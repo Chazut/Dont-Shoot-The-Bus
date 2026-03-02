@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net472</TargetFramework>
+		<AssemblyName>DontShootTheBus</AssemblyName>
+		<AssemblyVersion>1.0.0</AssemblyVersion>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>C:\Games\SPT-4.0\BepInEx\plugins\</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Reference Include="0Harmony">
+			<HintPath>dependencies\0Harmony.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="BepInEx">
+			<HintPath>dependencies\BepInEx.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="Assembly-CSharp">
+			<HintPath>dependencies\Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine">
+			<HintPath>dependencies\UnityEngine.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>dependencies\UnityEngine.CoreModule.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
+</Project>
