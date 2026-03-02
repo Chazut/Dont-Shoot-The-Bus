@@ -1,10 +1,10 @@
 # Dont Shoot The Bus
 
-A lightweight BepInEx mod for SPT that prevents AI bots from targeting the BTR armored vehicle.
+A lightweight BepInEx mod for SPT that prevents AI bots from targeting the BTR.
 
 ## The Problem
 
-PMC bots treat the BTR as a hostile target — they waste ammo shooting at it and reveal their positions for nothing. The BTR is armored and can't be destroyed by small arms fire, so this behavior is purely detrimental to bot survival.
+PMC bots treat the BTR as a hostile target — they waste ammo shooting at it and reveal their positions for nothing.
 
 ## The Fix
 
@@ -12,8 +12,9 @@ A single Harmony patch on `BotsGroup.AddEnemy` that prevents the BTR bot shooter
 
 ## Installation
 
-1. Copy `DontShootTheBus.dll` into `SPT/BepInEx/plugins/`
-2. That's it.
+1. Download the latest release zip
+2. Extract into your SPT root folder
+3. That's it.
 
 ## Compatibility
 
@@ -32,4 +33,4 @@ A single Harmony patch on `BotsGroup.AddEnemy` that prevents the BTR bot shooter
 
 ## Credits
 
-- Discovered via [Raid Review](https://github.com/Chazut/SPT-RaidReview) bot behavior tracking
+- Discovered via [Raid Review](https://forge.sp-tarkov.com/mod/1479/raid-review) bot behavior tracking
