@@ -1,4 +1,5 @@
 using BepInEx;
+using BepInEx.Logging;
 using EFT;
 using HarmonyLib;
 
@@ -14,16 +15,56 @@ namespace DontShootTheBus
         }
     }
 
+    [HarmonyPatch(typeof(BotsGroup), nameof(BotsGroup.IsPlayerEnemy))]
+    public static class BotsGroup_IsPlayerEnemy_Patch
+    {
+        public static bool Prefix(BotsGroup __instance, IPlayer player, ref bool __result)
+        {
+            try
+            {
+                if (__instance.InitialBotType == WildSpawnType.shooterBTR)
+                {
+                    __result = false;
+                    return false;
+                }
+
+                if (player.AIData != null && player.AIData.IsAI && player.AIData.BotOwner != null)
+                {
+                    if (player.AIData.BotOwner.Profile.Info.Settings.Role == WildSpawnType.shooterBTR)
+                    {
+                        __result = false;
+                        return false;
+                    }
+                }
+            }
+            catch { }
+            return true;
+        }
+    }
+
     [HarmonyPatch(typeof(BotsGroup), nameof(BotsGroup.AddEnemy))]
     public static class BotsGroup_AddEnemy_Patch
     {
-        public static bool Prefix(IPlayer person)
+        public static bool Prefix(BotsGroup __instance, IPlayer person, ref bool __result)
         {
-            if (BTRControllerClass.Instance?.BotShooterBtr != null &&
-                person.Id == BTRControllerClass.Instance.BotShooterBtr.GetPlayer.Id)
+            try
             {
-                return false;
+                if (__instance.InitialBotType == WildSpawnType.shooterBTR)
+                {
+                    __result = false;
+                    return false;
+                }
+
+                if (person.AIData != null && person.AIData.IsAI && person.AIData.BotOwner != null)
+                {
+                    if (person.AIData.BotOwner.Profile.Info.Settings.Role == WildSpawnType.shooterBTR)
+                    {
+                        __result = false;
+                        return false;
+                    }
+                }
             }
+            catch { }
             return true;
         }
     }
