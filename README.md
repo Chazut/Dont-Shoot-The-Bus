@@ -8,7 +8,11 @@ PMC bots treat the BTR as a hostile target — they waste ammo shooting at it an
 
 ## The Fix
 
-A single Harmony patch on `BotsGroup.AddEnemy` that prevents the BTR bot shooter from being registered as an enemy. Bots will simply ignore the BTR and focus on actual threats.
+Two Harmony patches on `BotsGroup.IsPlayerEnemy` and `BotsGroup.AddEnemy` that ensure:
+- The BTR's bot group never considers anyone an enemy
+- No bot group can add the BTR as an enemy
+
+Paid cover fire (paying the BTR driver to shoot hostiles) still works normally — it uses a separate targeting system.
 
 ## Installation
 
