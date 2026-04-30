@@ -1,4 +1,7 @@
 # Dont Shoot The Bus
+![Stars](https://img.shields.io/github/stars/Chazut/Dont-Shoot-The-Bus?style=flat-square&label=STARS&color=007ec6)
+![Issues](https://img.shields.io/github/issues/Chazut/Dont-Shoot-The-Bus?style=flat-square&label=ISSUES&color=44cc11)
+![Downloads](https://img.shields.io/github/downloads/Chazut/Dont-Shoot-The-Bus/total?style=flat-square&label=DOWNLOADS&color=44cc11)
 
 A lightweight BepInEx mod for SPT that prevents AI bots from targeting the BTR.
 
